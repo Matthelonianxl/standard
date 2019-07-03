@@ -20,7 +20,8 @@
     "eslint-plugin-promise": "~3.8.0",
     "eslint-plugin-react": "~7.7.0",
     "eslint-plugin-standard": "~3.1.0",
-    "standard-engine": "~9.0.0"
+    "standard-engine": "~9.0.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
@@ -72,6 +73,9 @@
     "show-rules-disabled": "eslint-index eslintrc.json --status omitted off",
     "show-summary": "eslint-index eslintrc.json --format table",
     "test": "./bin/cmd.js --verbose && tape test/*.js",
-    "update-authors": "./tools/update-authors.sh"
-  }
+    "update-authors": "./tools/update-authors.sh",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
